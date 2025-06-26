@@ -2,11 +2,11 @@ FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim
 
 WORKDIR /app
 
-COPY pyproject.toml uv.lock ./
+COPY . .
+
 RUN uv pip install --system --no-cache .
 RUN apt-get update && apt-get install -y curl
 
-COPY . .
 
 EXPOSE 8002
 
