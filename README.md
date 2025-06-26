@@ -44,12 +44,14 @@
   You can use `docker ps` to view the health status of each container in the "STATUS" column.
 
   Example output:
+  
   ![Sample docker ps output](images/docker_ps_output.png)
 
 - **Custom Nginx Logging:**  
   Nginx logs each incoming request with a timestamp and path, viewable live in your terminal and in the `logs/` folder.
 
   Example output:
+
   ![Sample logs output](images/access_log_output.png)
 
 - **Automatic log folder creation:**  
