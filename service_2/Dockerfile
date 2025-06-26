@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY pyproject.toml uv.lock ./
 RUN uv pip install --system --no-cache .
+RUN apt-get update && apt-get install -y curl
 
 COPY . .
 
