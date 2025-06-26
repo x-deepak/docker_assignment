@@ -1,9 +1,11 @@
-FROM golang:1.22 AS builder
-WORKDIR /app
-COPY . .
-RUN go build -o service_1 main.go
+FROM golang:1.22
 
-FROM gcr.io/distroless/base
-COPY --from=builder /app/service_1 .
-CMD ["/service_1"]
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y curl
+
+COPY . .
+
 EXPOSE 8001
+
+CMD ["go", "run", "main.go"]
